@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<int> findDuplicates(vector<int>& nums) {
-        bool seen[400000] = {false};
+        bool seen[4000000] = {false};
         vector<int>ans;
 
         for(int c : nums){
