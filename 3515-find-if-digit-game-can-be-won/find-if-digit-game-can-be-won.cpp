@@ -10,13 +10,9 @@ public:
             }
             else{
                 s+=nums[i];
-
             }
-
         }
-        if(s==d) return false;
-
-        return true;
+        return s==d ? false:true;
         
     }
 };
