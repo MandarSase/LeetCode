@@ -3,15 +3,17 @@ public:
     int longestBalanced(vector<int>& nums) {
         int n = nums.size();
         int ans = 0;
+
         for (int i = 0; i < n; ++i) {
-            unordered_set<int> vis;
-            int cnt[2]{};
+            unordered_map<int, int> freq;
+            int even = 0, odd = 0;
+
             for (int j = i; j < n; ++j) {
-                if (!vis.contains(nums[j])) {
-                    vis.insert(nums[j]);
-                    ++cnt[nums[j] & 1];
+                if (++freq[nums[j]] == 1) { 
+                    if (nums[j] & 1) odd++;
+                    else even++;
                 }
-                if (cnt[0] == cnt[1]) {
+                if (even == odd) {
                     ans = max(ans, j - i + 1);
                 }
             }
