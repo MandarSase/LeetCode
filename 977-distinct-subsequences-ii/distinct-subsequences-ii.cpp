@@ -3,10 +3,8 @@ class Solution {
   int distinctSubseqII(string s) {
     constexpr int kMod = 1'000'000'007;
     vector<long> endsIn(26);
-
     for (const char c : s)
       endsIn[c - 'a'] = accumulate(endsIn.begin(), endsIn.end(), 1L) % kMod;
-
     return accumulate(endsIn.begin(), endsIn.end(), 0L) % kMod;
   }
 };
