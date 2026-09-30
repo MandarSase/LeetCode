@@ -10,5 +10,3 @@ class Solution {
     return accumulate(endsIn.begin(), endsIn.end(), 0L) % kMod;
   }
 };
-
-
